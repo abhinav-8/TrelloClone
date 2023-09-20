@@ -26,6 +26,7 @@
     - We can also have separate table for task comments where the columns would have userId, taskId etc if we want the comments from different users too.
 3.  - We can make separate error files for client errors.A sample would look like this,though it's for backend.
 This one was for handling all the validation errors.We can do these things and handle errors gracefully.
+We can catch these errors by adding try catch blocks.
 ```
 const { StatusCodes } = require("http-status-codes");
 class ValidationError extends Error {
