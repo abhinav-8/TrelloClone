@@ -16,12 +16,18 @@
 - 3.How will you do error handling?
 
 ## Answers
-- 1.Yes this is possible , I haven't hardcoded this part,it can be handled gracefully by just sending these data from the backend having these titles.
-We can make a endpoint on backend ,we can hit a request everytime a new type of stage is added ,which will make that data added.
-- 2.Currently,I have only title in the tasks but later we can have more details about task ,in which we can just add a section for comments,deadlines etc.
-- 3.Will make separate error files for client errors.A sample would look like this,though it's for backend.
+
+1.  - Yes this is possible , I haven't hardcoded this part,it can be handled gracefully by just sending these data from the backend having these titles.
+    - There would be a table for lists or stages.The primary keykey would act as a foreign key and will have a one      many relationship with the task table.Currently haven't considered different boards.
+    - We can make an endpoint on for just adding more stages which will be a POST request.
+2.  - Currently,I have only title in the tasks but later we can have more details about task ,in which we can just add a section for comments,deadlines etc.
+    - For this there would be task table having foreign key=P.K of Stages table.The table would have columns as Comments(type array) and would be allowed to be null.There would be various other columns like title,deadline,createdAt and updatedAt etc.
+    - Yes from frontend perspective we have to just make an Input Component for comments and hit the PATCH or POST request depending upon the usecase.
+    - We can also have separate table for task comments where the columns would have userId, taskId etc if we want the comments from different users too.
+3.  - We can make separate error files for client errors.A sample would look like this,though it's for backend.
 This one was for handling all the validation errors.We can do these things and handle errors gracefully.
-```const { StatusCodes } = require("http-status-codes");
+```
+const { StatusCodes } = require("http-status-codes");
 class ValidationError extends Error {
     constructor(error) {
         super();
@@ -36,5 +42,7 @@ class ValidationError extends Error {
     }
 }
 
-module.exports = ValidationError;```
+module.exports = ValidationError;
+
+```
 
