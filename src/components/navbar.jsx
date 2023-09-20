@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input } from "antd";
 const { Search } = Input;
 export default function Navbar() {
   const onSearch = (value) => console.log(value);
-  const [userName,setUserName] = useState("Abhinav Kumar");
+  const userName = "Abhinav Kumar";
   return (
     <div className="bg-white-100 p-4">
       <div className="flex items-center justify-between">

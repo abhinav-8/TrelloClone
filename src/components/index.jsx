@@ -17,7 +17,6 @@ function App() {
     },[]);
 
     const dragEnded = (lid, tid) => {
-        console.log("cheeers");
         let s_listIndex, s_taskIndex, t_listIndex, t_taskIndex;
         s_listIndex = lists.findIndex((item) => item.id === lid);
         if (s_listIndex < 0) return;
