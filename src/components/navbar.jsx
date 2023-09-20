@@ -5,7 +5,7 @@ export default function Navbar() {
   const onSearch = (value) => console.log(value);
   const [userName,setUserName] = useState("Abhinav Kumar");
   return (
-    <div className="bg-white-100 h-16 p-4">
+    <div className="bg-white-100 p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img
