@@ -18,7 +18,7 @@
 ## Answers
 
 1.  - Yes this is possible , I haven't hardcoded this part,it can be handled gracefully by just sending these data from the backend having these titles.
-    - There would be a table for lists or stages.The primary keykey would act as a foreign key and will have a one      many relationship with the task table.Currently haven't considered different boards.
+    - There would be a table for lists or stages.The primary key would act as a foreign key and will have a one      many relationship with the task table.Currently haven't considered different boards.
     - We can make an endpoint on for just adding more stages which will be a POST request.
 2.  - Currently,I have only title in the tasks but later we can have more details about task ,in which we can just add a section for comments,deadlines etc.
     - For this there would be task table having foreign key=P.K of Stages table.The table would have columns as Comments(type array) and would be allowed to be null.There would be various other columns like title,deadline,createdAt and updatedAt etc.
