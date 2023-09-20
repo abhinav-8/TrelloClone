@@ -1,11 +1,12 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-
+import Navbar from "./navbar";
+import Sidebar from "./sidebar";
 function App() {
   return (
-    <Routes>
-      {/* <Route path="/" element={<test />} /> */}
-    </Routes>
+    <>
+    <Navbar/>
+    <Sidebar/>
+    </>    
   );
 }
 
