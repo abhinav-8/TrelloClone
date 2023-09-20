@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Trello Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup:
 
-## Available Scripts
+- Clone the repository from `git@github.com:abhinav-8/ZuddlAssignment.git`
+- Execute command to install the necessary packages `npm install`
+- For running the app in dev mode,execute command `npm start` in root directory
 
-In the project directory, you can run:
+## Questions
+- 1.If a user can create and edit stages for a particular board. For example instead of Open > In Progress > Done if they want the stages of their task board to be Read > Working > Reviewing > Completed
+- 2.If users can comment on tasks
+- 3.How will you do error handling?
 
-### `npm start`
+## Answers
+- 1.Yes this is possible , I haven't hardcoded this part,it can be handled gracefully by just sending these data from the backend having these titles.
+We can make a endpoint on backend ,we can hit a request everytime a new type of stage is added ,which will make that data added.
+- 2.Currently,I have only title in the tasks but later we can have more details about task ,in which we can just add a section for comments,deadlines etc.
+- 3.Will make separate error files for client errors.A sample would look like this,though it's for backend.
+This one was for handling all the validation errors.We can do these things and handle errors gracefully.
+```const { StatusCodes } = require("http-status-codes");
+class ValidationError extends Error {
+    constructor(error) {
+        super();
+        let explanation = [];
+        error.errors.forEach((err) => {
+            explanation.push(err.message);
+        });
+        this.name = 'ValidationError';
+        this.message = 'Not able to validate the data sent in the request';
+        this.explanation = explanation;
+        this.statusCode = StatusCodes.BAD_REQUEST
+    }
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+module.exports = ValidationError;```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
