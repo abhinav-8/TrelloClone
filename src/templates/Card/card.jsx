@@ -4,6 +4,7 @@ import React from 'react';
 export default function CardTemplate({
     bordered,
     title,
+    draggable,
     hoverable,
     className,  
     children,
@@ -12,6 +13,7 @@ export default function CardTemplate({
     return (
         <Card
             bordered={bordered}
+            draggable={draggable}
             title={title}
             hoverable={hoverable}
             className={className}

@@ -6,15 +6,23 @@ const getData = () => {
             tasks:[
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task1 is this"
+                    title:"Conduct market research to identify your target audience, competitors, and market trends"
                 },
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task2 is this"
+                    title:"Develop the e-commerce website, including front-end and back-end components."
                 },
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task3 is this"
+                    title:"Integrate a secure payment gateway to enable online transactions"
+                },
+                {
+                    id:Date.now()+Math.random()*2,
+                    title:"Implement user authentication and authorization features for customer accounts."
+                },
+                {
+                    id:Date.now()+Math.random()*2,
+                    title:"Develop a marketing strategy to promote the e-commerce site, including SEO, social media marketing, and email campaigns"
                 }
             ]
         },
@@ -24,15 +32,15 @@ const getData = () => {
             tasks:[
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task4 is this"
+                    title:"Design wireframes for the website's main pages, such as the homepage, product listing, product details, cart, and checkout pages"
                 },
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task5 is this"
+                    title:"Plan the database structure to store product information, customer data, and order details."
                 },
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task6 is this"
+                    title:"Conduct thorough testing to ensure the website functions correctly, is secure, and provides a positive user experience."
                 }
             ]
         },
@@ -42,16 +50,12 @@ const getData = () => {
             tasks:[
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task7 is this"
+                    title:"Create a detailed product catalog, including product descriptions, images, and pricing"
                 },
                 {
                     id:Date.now()+Math.random()*2,
-                    title:"Task8 is this"
+                    title:"Analyze the websites of your competitors to identify strengths, weaknesses, and opportunities for your e-commerce site."
                 },
-                {
-                    id:Date.now()+Math.random()*2,
-                    title:"Task9 is this"
-                }
             ]
         },
     ];

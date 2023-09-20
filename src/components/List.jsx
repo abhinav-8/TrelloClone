@@ -6,7 +6,14 @@ export default function List(props) {
             <div className="text-lg font-bold">{props.title}</div>
             {props.tasks.map((data,index) => {
             return (
-                <Card id = {data.id} key={index} className="bg-zinc-700 rounded shadow-lg whitespace-pre-line mt-4 p-3 hover:bg-zinc-200">
+                <Card draggable
+                    onDragEnd={() => props.dragEnded(props.id, data.id)}
+                    onDragStart={() => props.dragEntered(props.id, data.id)}
+
+                    id = {data.id} 
+                    key={index} 
+                    className="bg-[#bcbcbc] rounded shadow-lg whitespace-pre-line mt-4 p-3 hover:bg-zinc-200"
+                >
                     {data.title}
                 </Card>
             )
