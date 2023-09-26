@@ -6,9 +6,10 @@
 - Execute command to install the necessary packages `npm install`
 - For running the app in dev mode,execute command `npm start` in root directory
 
-## Screenshot:
+## Demo:
 
-<img width="1192" alt="Live Demo" src="https://github.com/abhinav-8/ZuddlAssignment/blob/master/public/assets/live_screenshot.png"/>
+https://github.com/abhinav-8/ZuddlAssignment/assets/72845356/2e295033-33fb-4b90-a6cc-9efeb6e5f091
+
 
 ## Questions
 - 1.If a user can create and edit stages for a particular board. For example instead of Open > In Progress > Done if they want the stages of their task board to be Read > Working > Reviewing > Completed
