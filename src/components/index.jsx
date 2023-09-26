@@ -1,7 +1,6 @@
 import React , {useEffect,useState} from "react";
 import Navbar from "./navbar";
 import Board from "./board";
-import Cookies from 'js-cookie';
 import { getData } from "../utils/mockData";
 function App() {
     const [lists,setLists] = useState([])
@@ -35,7 +34,6 @@ function App() {
         const tempLists = [...lists];
         if (t_taskIndex < 0) {
           const sourceTask =  tempLists[s_listIndex].tasks.splice(s_taskIndex, 1);
-          console.log("source task",sourceTask);
           tempLists[t_listIndex].push(sourceTask);
         }
         else {
