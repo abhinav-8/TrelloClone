@@ -1,13 +1,12 @@
 import React , {useEffect,useState} from "react";
 import Navbar from "./navbar";
 import Board from "./board";
+import Cookies from 'js-cookie';
 import { getData } from "../utils/mockData";
 function App() {
     const [lists,setLists] = useState([])
-    const [targetTask, setTargetTask] = useState({
-        lid: "",
-        tid: "",
-    });
+    const [lid,setLid] = useState("");
+    const [tid,setTid] = useState("");
     const mockData = () => {
         const tempdata = getData();
         setLists(tempdata);
@@ -16,41 +15,42 @@ function App() {
         mockData();
     },[]);
 
-    const dragEnded = (lid, tid) => {
+    const dragEnded = (e,targetTaskLid, targetTaskTid) => {
+        e.preventDefault();
+
         let s_listIndex, s_taskIndex, t_listIndex, t_taskIndex;
-        s_listIndex = lists.findIndex((item) => item.id === lid);
+        s_listIndex = lists.findIndex((item) => item.id == lid);
         if (s_listIndex < 0) return;
-    
         s_taskIndex = lists[s_listIndex]?.tasks?.findIndex(
-          (item) => item.id === tid
+          (item) => item.id == tid
         );
         if (s_taskIndex < 0) return;
     
-        t_listIndex = lists.findIndex((item) => item.id === targetTask.lid);
+        t_listIndex = lists.findIndex((item) => item.id == targetTaskLid);
         if (t_listIndex < 0) return;
     
         t_taskIndex = lists[t_listIndex]?.tasks?.findIndex(
-          (item) => item.id === targetTask.tid
+          (item) => item.id == targetTaskTid
         );
-        if (t_taskIndex < 0) return;
-    
         const tempLists = [...lists];
-        const sourceTask = tempLists[s_listIndex].tasks[s_taskIndex];
-        tempLists[s_listIndex].tasks.splice(s_taskIndex, 1);
-        tempLists[t_listIndex].tasks.splice(t_taskIndex, 0, sourceTask);
+        if (t_taskIndex < 0) {
+          const sourceTask =  tempLists[s_listIndex].tasks.splice(s_taskIndex, 1);
+          console.log("source task",sourceTask);
+          tempLists[t_listIndex].push(sourceTask);
+        }
+        else {
+          const sourceTask = tempLists[s_listIndex].tasks[s_taskIndex];
+          tempLists[s_listIndex].tasks.splice(s_taskIndex, 1);
+          tempLists[t_listIndex].tasks.splice(t_taskIndex, 0, sourceTask);
+        }
         setLists(tempLists);
-        setTargetTask({
-          lid: "",
-          tid: "",
-        });
-      };
+        setLid("");
+        setTid("");
+    };
     
-      const dragEntered = (lid, tid) => {
-        if (targetTask.tid === tid) return;
-        setTargetTask({
-          lid,
-          tid,
-        });
+      const dragEntered = (e,lid, tid) => {
+         setLid(lid);
+         setTid(tid);
       };
   return (
     <>

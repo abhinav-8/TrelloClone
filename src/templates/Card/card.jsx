@@ -9,6 +9,12 @@ export default function CardTemplate({
     className,  
     children,
     onClick,
+    onDragStart,
+    onDragEnd,
+    onDragLeave,
+    onDragEnter,
+    onDrop,
+    onDragOver,
 }){
     return (
         <Card
@@ -16,6 +22,12 @@ export default function CardTemplate({
             draggable={draggable}
             title={title}
             hoverable={hoverable}
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
+            onDragLeave={onDragLeave}
+            onDragEnter={onDragEnter}
+            onDrop={onDrop}
+            onDragOver={onDragOver}
             className={className}
             onClick={onClick}
             bodyStyle={{
