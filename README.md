@@ -2,7 +2,7 @@
 
 ## Setup:
 
-- Clone the repository from `git@github.com:abhinav-8/ZuddlAssignment.git`
+- Clone the repository from `git@github.com:abhinav-8/TrelloClone.git`
 - Execute command to install the necessary packages `npm install`
 - For running the app in dev mode,execute command `npm start` in root directory
 
